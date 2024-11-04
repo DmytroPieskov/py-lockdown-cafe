@@ -8,12 +8,11 @@ from app.errors import (
 
 
 class Cafe:
-    count_friends = None
 
     def __init__(self, name: str) -> None:
         self.name = name
 
-    def visit_cafe(self, visitor: dict) -> str | VaccineError:
+    def visit_cafe(self, visitor: dict) -> str:
         current_date = datetime.date.today()
         if "vaccine" not in visitor:
             raise NotVaccinatedError("NotVaccinatedError")
